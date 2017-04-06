@@ -18,6 +18,8 @@
 		A34BA8671E9670F600134BDD /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34BA8661E9670F600134BDD /* RoundButton.swift */; };
 		A34BA8691E9674A700134BDD /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34BA8681E9674A700134BDD /* FancyField.swift */; };
 		A34BA86B1E9678CD00134BDD /* FancyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34BA86A1E9678CD00134BDD /* FancyButton.swift */; };
+		A34BA86E1E96B69A00134BDD /* UserNotFoundError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34BA86D1E96B69A00134BDD /* UserNotFoundError.swift */; };
+		A3D182531E96BEC900898ACC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D182521E96BEC900898ACC /* Result.swift */; };
 		D853ED72C5A253E0AC2AE716 /* Pods_socialnetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6200BB568996010A114431A /* Pods_socialnetwork.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		A34BA8661E9670F600134BDD /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		A34BA8681E9674A700134BDD /* FancyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
 		A34BA86A1E9678CD00134BDD /* FancyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyButton.swift; sourceTree = "<group>"; };
+		A34BA86D1E96B69A00134BDD /* UserNotFoundError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotFoundError.swift; sourceTree = "<group>"; };
+		A3D182521E96BEC900898ACC /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		C6200BB568996010A114431A /* Pods_socialnetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_socialnetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -81,6 +85,7 @@
 		A34BA8491E95264A00134BDD /* socialnetwork */ = {
 			isa = PBXGroup;
 			children = (
+				A34BA86C1E96B67300134BDD /* Errors */,
 				A34BA8631E9595F300134BDD /* Util */,
 				A34BA8601E95581300134BDD /* Controller */,
 				A34BA85F1E95580F00134BDD /* View */,
@@ -98,6 +103,7 @@
 		A34BA85E1E95580B00134BDD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A3D182521E96BEC900898ACC /* Result.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -127,6 +133,14 @@
 				A34BA8641E95960200134BDD /* Constants.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		A34BA86C1E96B67300134BDD /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				A34BA86D1E96B69A00134BDD /* UserNotFoundError.swift */,
+			);
+			name = Errors;
 			sourceTree = "<group>";
 		};
 		DB239C57CFD558C4F1EE44F7 /* Pods */ = {
@@ -263,6 +277,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3D182531E96BEC900898ACC /* Result.swift in Sources */,
+				A34BA86E1E96B69A00134BDD /* UserNotFoundError.swift in Sources */,
 				A34BA8691E9674A700134BDD /* FancyField.swift in Sources */,
 				A34BA84D1E95264A00134BDD /* SignInVC.swift in Sources */,
 				A34BA8671E9670F600134BDD /* RoundButton.swift in Sources */,
