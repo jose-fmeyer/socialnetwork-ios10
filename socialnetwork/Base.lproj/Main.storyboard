@@ -75,6 +75,9 @@
                                         <state key="normal" backgroundImage="f">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="facebookLoginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DAc-vt-Z29"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
