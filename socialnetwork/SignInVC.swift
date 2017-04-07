@@ -10,6 +10,7 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
 import Firebase
+import SwiftKeychainWrapper
 
 class SignInVC: UIViewController {
 
@@ -18,6 +19,12 @@ class SignInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            performSegue(withIdentifier: FEEDVC_SEGUE, sender: nil)
+        }
     }
 
     @IBAction func facebookLoginPressed(_ sender: UIButton) {
@@ -34,8 +41,9 @@ class SignInVC: UIViewController {
                 self.firebaseAuth(credential, completion: {
                     (result) in
                     switch result {
-                        case .Success(let value):
-                            print("USER CONNECTED SUCCEFULLY ON FIREBASE: \(value)")
+                        case .Success(let user):
+                            print("USER CONNECTED SUCCEFULLY ON FIREBASE: \(user.email)")
+                            self.doOnSuccessfullyLogin(user: user)
                             break
                         case .Failure(let error):
                             print("ERROR ON CONNECT ON FIREBASE: \(error.localizedDescription)")
@@ -45,15 +53,15 @@ class SignInVC: UIViewController {
         }
     }
     
-    func firebaseAuth(_ credential: FIRAuthCredential, completion: @escaping (Result<String>) -> ()) {
+    func firebaseAuth(_ credential: FIRAuthCredential, completion: @escaping (Result<FIRUser>) -> ()) {
         FIRAuth.auth()?.signIn(with: credential, completion: {
             (user, error) in
             if error != nil {
                 print("UNABLE TO AUTH WITH FIREBASE - \(error)")
                 completion(Result.Failure(error!))
             }
-            if let userEmail = user?.email {
-                completion(Result.Success(userEmail))
+            if user != nil {
+                completion(Result.Success(user!))
             } else {
                 completion(Result.Failure(LoginError.userNotFound))
             }
@@ -65,8 +73,9 @@ class SignInVC: UIViewController {
             firebaseAuth(FIREmailPasswordAuthProvider.credential(withEmail: email, password: password), completion: {
                 (result) in
                 switch result {
-                case .Success(let value):
-                    print("USER CONNECTED SUCCEFULLY: \(value)")
+                case .Success(let user):
+                    print("USER CONNECTED SUCCEFULLY: \(user.email)")
+                    self.doOnSuccessfullyLogin(user: user)
                     break
                 case .Failure(let error):
                     if case LoginError.userNotFound = error {
@@ -86,9 +95,17 @@ class SignInVC: UIViewController {
             if error != nil {
                 print("ERROR ON CREATE USER ON FIREBASE- \(error)")
             } else {
-                print("USER CREATED ON FIREBASE - \(user?.email)")
+                if let user = user {
+                    print("USER CREATED ON FIREBASE - \(user.email)")
+                    self.doOnSuccessfullyLogin(user: user)
+                }
             }
         })
+    }
+    
+    func doOnSuccessfullyLogin(user: FIRUser) {
+        KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
+        performSegue(withIdentifier: FEEDVC_SEGUE, sender: nil)
     }
 }
 
