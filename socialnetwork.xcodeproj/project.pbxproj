@@ -18,8 +18,9 @@
 		A34BA8671E9670F600134BDD /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34BA8661E9670F600134BDD /* RoundButton.swift */; };
 		A34BA8691E9674A700134BDD /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34BA8681E9674A700134BDD /* FancyField.swift */; };
 		A34BA86B1E9678CD00134BDD /* FancyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34BA86A1E9678CD00134BDD /* FancyButton.swift */; };
-		A34BA86E1E96B69A00134BDD /* UserNotFoundError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34BA86D1E96B69A00134BDD /* UserNotFoundError.swift */; };
+		A34BA86E1E96B69A00134BDD /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34BA86D1E96B69A00134BDD /* LoginError.swift */; };
 		A3D182531E96BEC900898ACC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D182521E96BEC900898ACC /* Result.swift */; };
+		A3D182551E97CCB300898ACC /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D182541E97CCB300898ACC /* FeedVC.swift */; };
 		D853ED72C5A253E0AC2AE716 /* Pods_socialnetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6200BB568996010A114431A /* Pods_socialnetwork.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,8 +40,9 @@
 		A34BA8661E9670F600134BDD /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		A34BA8681E9674A700134BDD /* FancyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
 		A34BA86A1E9678CD00134BDD /* FancyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyButton.swift; sourceTree = "<group>"; };
-		A34BA86D1E96B69A00134BDD /* UserNotFoundError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotFoundError.swift; sourceTree = "<group>"; };
+		A34BA86D1E96B69A00134BDD /* LoginError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
 		A3D182521E96BEC900898ACC /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		A3D182541E97CCB300898ACC /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		C6200BB568996010A114431A /* Pods_socialnetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_socialnetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				A34BA84C1E95264A00134BDD /* SignInVC.swift */,
+				A3D182541E97CCB300898ACC /* FeedVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -138,7 +141,7 @@
 		A34BA86C1E96B67300134BDD /* Errors */ = {
 			isa = PBXGroup;
 			children = (
-				A34BA86D1E96B69A00134BDD /* UserNotFoundError.swift */,
+				A34BA86D1E96B69A00134BDD /* LoginError.swift */,
 			);
 			name = Errors;
 			sourceTree = "<group>";
@@ -278,10 +281,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3D182531E96BEC900898ACC /* Result.swift in Sources */,
-				A34BA86E1E96B69A00134BDD /* UserNotFoundError.swift in Sources */,
+				A34BA86E1E96B69A00134BDD /* LoginError.swift in Sources */,
 				A34BA8691E9674A700134BDD /* FancyField.swift in Sources */,
 				A34BA84D1E95264A00134BDD /* SignInVC.swift in Sources */,
 				A34BA8671E9670F600134BDD /* RoundButton.swift in Sources */,
+				A3D182551E97CCB300898ACC /* FeedVC.swift in Sources */,
 				A34BA86B1E9678CD00134BDD /* FancyButton.swift in Sources */,
 				A34BA84B1E95264A00134BDD /* AppDelegate.swift in Sources */,
 				A34BA8621E9588D700134BDD /* FancyView.swift in Sources */,
