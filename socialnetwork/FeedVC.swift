@@ -12,8 +12,12 @@ import Firebase
 
 class FeedVC: UIViewController {
 
+    @IBOutlet weak var postsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        postsTableView.delegate = self
+        postsTableView.dataSource = self
     }
     
     @IBAction func signOutBtnPressed(_ sender: UIButton) {
@@ -21,5 +25,20 @@ class FeedVC: UIViewController {
             try! FIRAuth.auth()?.signOut()
             dismiss(animated: true, completion: nil)
         }
+    }
+}
+
+extension FeedVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return (tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell)!
     }
 }
