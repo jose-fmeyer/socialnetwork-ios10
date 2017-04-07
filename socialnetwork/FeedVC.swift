@@ -16,7 +16,7 @@ class FeedVC: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func signOutPressed(_ sender: UIButton) {
+    @IBAction func signOutBtnPressed(_ sender: UIButton) {
         if KeychainWrapper.standard.removeObject(forKey: KEY_UID) {
             try! FIRAuth.auth()?.signOut()
             dismiss(animated: true, completion: nil)
