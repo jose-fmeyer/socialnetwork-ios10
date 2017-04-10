@@ -22,6 +22,8 @@
 		A37CA2AF1E9BC063007CBB7D /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37CA2AE1E9BC063007CBB7D /* UsersService.swift */; };
 		A37CA2B11E9BC260007CBB7D /* Providers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37CA2B01E9BC260007CBB7D /* Providers.swift */; };
 		A37CA2B31E9BF751007CBB7D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37CA2B21E9BF751007CBB7D /* Post.swift */; };
+		A37CA2B51E9C1C85007CBB7D /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37CA2B41E9C1C85007CBB7D /* PostService.swift */; };
+		A37CA2B71E9C2491007CBB7D /* DownloadError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37CA2B61E9C2491007CBB7D /* DownloadError.swift */; };
 		A3D182531E96BEC900898ACC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D182521E96BEC900898ACC /* Result.swift */; };
 		A3D182551E97CCB300898ACC /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D182541E97CCB300898ACC /* FeedVC.swift */; };
 		A3D182571E98036000898ACC /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D182561E98036000898ACC /* CircleView.swift */; };
@@ -50,6 +52,8 @@
 		A37CA2AE1E9BC063007CBB7D /* UsersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
 		A37CA2B01E9BC260007CBB7D /* Providers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Providers.swift; sourceTree = "<group>"; };
 		A37CA2B21E9BF751007CBB7D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		A37CA2B41E9C1C85007CBB7D /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		A37CA2B61E9C2491007CBB7D /* DownloadError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadError.swift; sourceTree = "<group>"; };
 		A3D182521E96BEC900898ACC /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		A3D182541E97CCB300898ACC /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		A3D182561E98036000898ACC /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				A34BA86D1E96B69A00134BDD /* LoginError.swift */,
+				A37CA2B61E9C2491007CBB7D /* DownloadError.swift */,
 			);
 			name = Errors;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 			children = (
 				A3D1825B1E9BB4DE00898ACC /* DataService.swift */,
 				A37CA2AE1E9BC063007CBB7D /* UsersService.swift */,
+				A37CA2B41E9C1C85007CBB7D /* PostService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -314,11 +320,13 @@
 				A34BA8671E9670F600134BDD /* RoundButton.swift in Sources */,
 				A3D182551E97CCB300898ACC /* FeedVC.swift in Sources */,
 				A3D182571E98036000898ACC /* CircleView.swift in Sources */,
+				A37CA2B51E9C1C85007CBB7D /* PostService.swift in Sources */,
 				A34BA86B1E9678CD00134BDD /* FancyButton.swift in Sources */,
 				A34BA84B1E95264A00134BDD /* AppDelegate.swift in Sources */,
 				A34BA8621E9588D700134BDD /* FancyView.swift in Sources */,
 				A37CA2B31E9BF751007CBB7D /* Post.swift in Sources */,
 				A34BA8651E95960200134BDD /* Constants.swift in Sources */,
+				A37CA2B71E9C2491007CBB7D /* DownloadError.swift in Sources */,
 				A37CA2AF1E9BC063007CBB7D /* UsersService.swift in Sources */,
 				A3D182591E9819BA00898ACC /* PostCell.swift in Sources */,
 				A37CA2B11E9BC260007CBB7D /* Providers.swift in Sources */,

@@ -14,6 +14,7 @@ class FeedVC: UIViewController {
     
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
 
     @IBOutlet weak var postsTableView: UITableView!
     @IBOutlet weak var imageAddPicture: CircleView!
@@ -71,10 +72,18 @@ extension FeedVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let postCell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
             let postData = posts[indexPath.row]
-            postCell.prepareUI(post: postData)
+            preparePostCell(post: postData, cell: postCell)
             return postCell
         }
         return UITableViewCell()
+    }
+    
+    private func preparePostCell(post: Post, cell: PostCell) {
+        if let uiImage = FeedVC.imageCache.object(forKey: NSString(string: post.imageUrl)) {
+            cell.prepareUI(post: post, img: uiImage as UIImage)
+        } else {
+            cell.prepareUI(post: post, img: nil)
+        }
     }
 }
 
