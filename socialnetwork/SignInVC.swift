@@ -43,7 +43,7 @@ class SignInVC: UIViewController {
                     switch result {
                         case .Success(let user):
                             print("USER CONNECTED SUCCEFULLY ON FIREBASE: \(user.email)")
-                            self.doOnSuccessfullyLogin(user: user)
+                            self.doOnSuccessfullyLogin(user: user, provider: .FACEBOOK)
                             break
                         case .Failure(let error):
                             print("ERROR ON CONNECT ON FIREBASE: \(error.localizedDescription)")
@@ -75,7 +75,7 @@ class SignInVC: UIViewController {
                 switch result {
                 case .Success(let user):
                     print("USER CONNECTED SUCCEFULLY: \(user.email)")
-                    self.doOnSuccessfullyLogin(user: user)
+                    self.doOnSuccessfullyLogin(user: user, provider: .FIREBASE)
                     break
                 case .Failure(let error):
                     if case LoginError.userNotFound = error {
@@ -97,15 +97,21 @@ class SignInVC: UIViewController {
             } else {
                 if let user = user {
                     print("USER CREATED ON FIREBASE - \(user.email)")
-                    self.doOnSuccessfullyLogin(user: user)
+                    self.doOnSuccessfullyLogin(user: user, provider: .FIREBASE)
                 }
             }
         })
     }
     
-    func doOnSuccessfullyLogin(user: FIRUser) {
+    func doOnSuccessfullyLogin(user: FIRUser, provider: Provider) {
+        UsersService.instance.createUser(uid: user.uid, userData: createUserData(provider: provider))
         KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
         performSegue(withIdentifier: FEEDVC_SEGUE, sender: nil)
+    }
+    
+    private func createUserData(provider: Provider) -> Dictionary<String, String> {
+        let userData = ["provider": provider.providerValue()]
+        return userData
     }
 }
 

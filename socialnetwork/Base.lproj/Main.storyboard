@@ -153,13 +153,14 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rte-tq-sC6">
                                         <rect key="frame" x="10" y="35" width="35" height="20"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="QL2-MH-XvD"/>
                                             <constraint firstAttribute="height" constant="20" id="Vwg-nj-Mn9"/>
                                         </constraints>
                                         <state key="normal" image="sign-out"/>
                                         <connections>
-                                            <action selector="signOutBtnPressed:" destination="hyT-V5-Q6r" eventType="touchUpInside" id="fCB-Kg-90G"/>
+                                            <outletCollection property="gestureRecognizers" destination="6ge-Ra-1vF" appends="YES" id="Vca-7P-hVn"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQG-Yr-Wm8">
@@ -344,6 +345,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFJ-A8-aNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6ge-Ra-1vF">
+                    <connections>
+                        <action selector="signOutBtnPressed:" destination="hyT-V5-Q6r" id="ymf-68-qhS"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="948.75" y="36.971830985915496"/>
         </scene>
