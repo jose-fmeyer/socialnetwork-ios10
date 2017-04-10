@@ -26,7 +26,8 @@ class PostCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func prepareUI() {
-        
+    func prepareUI(post: Post) {
+        postText.text = post.caption
+        likeCountLabel.text = "\(post.likes)"
     }
 }
