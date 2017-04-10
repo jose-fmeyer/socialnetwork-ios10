@@ -18,6 +18,10 @@ class FeedVC: UIViewController {
         super.viewDidLoad()
         postsTableView.delegate = self
         postsTableView.dataSource = self
+        
+        DataService.instance.REAF_POSTS.observe(.value, with: { (snapshot) in
+            print(snapshot.value!)
+        })
     }
     
     @IBAction func signOutBtnPressed(_ sender: UIButton) {
